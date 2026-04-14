@@ -1,0 +1,11 @@
+/**
+ * NRadio: внутренняя точка выбранного состояния — 8px по макету (Figma 62-7080).
+ * Naive: ::before с inset 4px и calc(100% - 8px) → ~12px при radio 20px.
+ */
+.n-radio:not(.n-radio--disabled).n-radio--checked .n-radio__dot::before {
+  top: calc((var(--n-radio-size, 20px) - 8px) / 2);
+  left: calc((var(--n-radio-size, 20px) - 8px) / 2);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}

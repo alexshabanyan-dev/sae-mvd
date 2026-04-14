@@ -1,0 +1,112 @@
+/**
+ * Утилиты ссылок по гайду — цвета из :root (ставятся из naive/tokens.ts в main.ts).
+ */
+:root {
+  /* Фон всего приложения (Figma 1-869); в рантайме — из applyIscodCssVariables() */
+  --iscod-page-background: #eef2f6;
+  --iscod-color-link: #2c77ae;
+  --iscod-color-link-menu-idle: #7392ae;
+  --iscod-color-link-underline-hover: rgba(44, 119, 174, 0.5);
+  --iscod-font-size-heading-link: 16px;
+  /* Переопределяются в main через applyIscodCssVariables() */
+  --iscod-header-gradient: linear-gradient(
+    180deg,
+    #1b67a6 0%,
+    #0a5a96 42%,
+    #004080 100%
+  );
+  --iscod-header-text: #ffffff;
+  --iscod-header-watermark-opacity: 0.055;
+  --iscod-header-rule: rgba(0, 0, 0, 0.38);
+  /* Figma 62-7071; в рантайме — из applyIscodCssVariables() */
+  --iscod-checkbox-hover-shadow: 0 2px 8px rgba(29, 109, 168, 0.5);
+  /* Figma 62-7096 (switch hover, выкл.); в рантайме — из applyIscodCssVariables() */
+  --iscod-switch-hover-rail: #d7dee6;
+  /* Figma 62-7090 (switch disabled); в рантайме — из applyIscodCssVariables() */
+  --iscod-switch-disabled-rail: #eef1f5;
+  --iscod-switch-disabled-rail-active: #94b9d4;
+}
+
+/**
+ * Checkbox hover по макету: бордер остаётся нейтральным (через borderChecked в теме Naive),
+ * тень Naive на hover не задаёт — только через CSS (см. naive-ui checkbox index.cssr).
+ */
+.n-checkbox:not(.n-checkbox--disabled):not(.n-checkbox--checked):hover
+  .n-checkbox-box__border {
+  box-shadow: var(--iscod-checkbox-hover-shadow);
+}
+
+/**
+ * Switch hover (Figma 62-7096): рельс выкл. состояния — #d7dee6.
+ * В naive-ui 2.44 у NSwitch нет railColorHover в GlobalThemeOverrides.
+ */
+.n-switch:not(.n-switch--disabled):not(.n-switch--active):not(.n-switch--loading):hover
+  .n-switch__rail {
+  background-color: var(--iscod-switch-hover-rail);
+}
+
+/**
+ * Switch disabled (Figma 62-7090): в naive-ui нет цветов рельса для disabled, только
+ * `opacity: 0.5` на рельсе — снимаем затемнение и задаём сплошные цвета из токенов.
+ */
+.n-switch.n-switch--disabled .n-switch__rail {
+  opacity: 1;
+  background-color: var(--iscod-switch-disabled-rail);
+}
+
+.n-switch.n-switch--disabled.n-switch--active .n-switch__rail {
+  background-color: var(--iscod-switch-disabled-rail-active);
+}
+
+a.iscod-link {
+  color: var(--iscod-color-link);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a.iscod-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--iscod-color-link-underline-hover);
+}
+
+a.iscod-link--heading {
+  font-size: var(--iscod-font-size-heading-link);
+  font-weight: 700;
+}
+
+/**
+ * Минимальный сброс: без «тяжёлого» reset.css — Naive закрывает большинство кейсов внутри виджетов.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  min-height: 100%;
+  background-color: var(--iscod-page-background);
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: var(--iscod-page-background);
+}
+
+/**
+ * Базовая типографика по гайду: PT Sans везде, где нет своих компонентов Naive.
+ */
+html,
+body,
+#app {
+  font-family: "PT Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/** Холст приложения — тот же цвет, что `ISCOD.pageBackgroundColor` / `Layout.color`. */
+#app {
+  min-height: 100vh;
+  background-color: var(--iscod-page-background);
+}
