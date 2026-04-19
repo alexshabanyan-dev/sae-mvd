@@ -155,6 +155,73 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
     arrowColor: ISCOD.formPlaceholderColor,
     dividerColor: ISCOD.formBorderColor,
   },
+  /**
+   * Primary: бордер и «сплошные» токены под ripple/фолбэк; градиент — `button-primary.css`.
+   */
+  Button: {
+    borderPrimary: `1px solid ${ISCOD.buttonPrimaryBorderColor}`,
+    borderHoverPrimary: `1px solid ${ISCOD.buttonPrimaryBorderColor}`,
+    borderPressedPrimary: `1px solid ${ISCOD.buttonPrimaryBorderColor}`,
+    borderFocusPrimary: `1px solid ${ISCOD.buttonPrimaryBorderColor}`,
+    borderDisabledPrimary: `1px solid ${ISCOD.buttonPrimaryBorderColor}`,
+    colorPrimary: "#3f86ba",
+    colorHoverPrimary: "#4698d6",
+    colorPressedPrimary: "#06406c",
+    colorFocusPrimary: "#4698d6",
+    colorDisabledPrimary: "#3f86ba",
+    rippleColorPrimary: "#3f86ba",
+    borderSuccess: `1px solid ${ISCOD.buttonSuccessBorderColor}`,
+    borderHoverSuccess: `1px solid ${ISCOD.buttonSuccessBorderColor}`,
+    borderPressedSuccess: `1px solid ${ISCOD.buttonSuccessBorderColor}`,
+    borderFocusSuccess: `1px solid ${ISCOD.buttonSuccessBorderColor}`,
+    borderDisabledSuccess: `1px solid ${ISCOD.buttonSuccessBorderColor}`,
+    colorSuccess: "#5aad5f",
+    colorHoverSuccess: "#6bc070",
+    colorPressedSuccess: "#1f5c24",
+    colorFocusSuccess: "#6bc070",
+    colorDisabledSuccess: "#5aad5f",
+    rippleColorSuccess: "#5aad5f",
+    /**
+     * Default: заливка/бордер/текст из токенов формы и синего UI-kit; hover-glow — `button-default.css`.
+     */
+    color: ISCOD.buttonDefaultColor,
+    colorHover: ISCOD.formReadonlyColor,
+    colorPressed: ISCOD.buttonDefaultColorPressed,
+    colorFocus: ISCOD.formReadonlyColor,
+    colorDisabled: ISCOD.formReadonlyColor,
+    textColor: ISCOD.formTextColor,
+    textColorHover: ISCOD.colorLink,
+    textColorPressed: ISCOD.colorLink,
+    textColorFocus: ISCOD.colorLink,
+    textColorDisabled: ISCOD.formRadioChosenDotColor,
+    border: `1px solid ${ISCOD.formBorderColor}`,
+    borderHover: `1px solid ${ISCOD.colorUiKitBlue}`,
+    borderPressed: `1px solid ${ISCOD.colorUiKitBlue}`,
+    borderFocus: `1px solid ${ISCOD.colorUiKitBlue}`,
+    borderDisabled: `1px solid ${ISCOD.formBorderColor}`,
+    rippleColor: ISCOD.colorUiKitBlue,
+  },
+  /**
+   * Выпадающие меню (`n-dropdown`): панель и пункты в духе полей и DatePicker
+   * ([Figma 62-6939](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6939&m=dev) — позиция/стрелка на триггере задаются пропсами).
+   */
+  Dropdown: {
+    borderRadius: "3px",
+    color: "#ffffff",
+    optionTextColor: ISCOD.formTextColor,
+    optionTextColorHover: ISCOD.formTextColor,
+    optionTextColorActive: ISCOD.colorLink,
+    optionTextColorChildActive: ISCOD.colorLink,
+    dividerColor: ISCOD.formBorderColor,
+    optionColorHover: ISCOD.formReadonlyColor,
+    optionColorActive: "rgba(44, 119, 174, 0.1)",
+    peers: {
+      Popover: {
+        borderRadius: "3px",
+        boxShadow: "0 4px 12px rgba(42, 60, 73, 0.12)",
+      },
+    },
+  },
   Form: {
     asteriskColor: "#fb000f",
     labelTextColor: ISCOD.formTextColor,

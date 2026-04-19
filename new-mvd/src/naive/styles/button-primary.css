@@ -1,0 +1,32 @@
+/**
+ * Primary `n-button`: градиент и тень подписи по макету ([Figma 62-6913](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6913&m=dev)).
+ * В Naive заливка — только `background-color`; градиент задаём через `background-image`.
+ */
+.n-button.n-button--primary-type:not(.n-button--ghost):not(.n-button--color) {
+  background-color: transparent !important;
+  background-image: var(--iscod-button-primary-gradient);
+  color: #ffffff;
+  text-shadow: var(--iscod-button-primary-text-shadow);
+}
+
+.n-button.n-button--primary-type:not(.n-button--ghost):not(.n-button--color):hover {
+  background-color: transparent !important;
+  background-image: var(--iscod-button-primary-gradient-hover);
+}
+
+.n-button.n-button--primary-type:not(.n-button--ghost):not(.n-button--color):focus {
+  background-color: transparent !important;
+  background-image: var(--iscod-button-primary-gradient-hover);
+}
+
+.n-button.n-button--primary-type:not(.n-button--ghost):not(.n-button--color):active,
+.n-button.n-button--primary-type:not(.n-button--ghost):not(.n-button--color).n-button--pressed {
+  background-color: transparent !important;
+  background-image: var(--iscod-button-primary-gradient-pressed);
+}
+
+.n-button.n-button--primary-type:not(.n-button--ghost):not(.n-button--color).n-button--disabled {
+  background-color: transparent !important;
+  background-image: var(--iscod-button-primary-gradient);
+  text-shadow: var(--iscod-button-primary-text-shadow);
+}

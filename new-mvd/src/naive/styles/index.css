@@ -3,3 +3,6 @@
  * Подключайте здесь новые файлы через @import.
  */
 @import "./radio-button.css";
+@import "./button-primary.css";
+@import "./button-success.css";
+@import "./button-default.css";

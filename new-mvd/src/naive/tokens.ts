@@ -72,4 +72,41 @@ export const ISCOD = {
    * У checkbox тень в global.css; у NRadio — встроенный `boxShadowHover` в теме Naive.
    */
   formCheckboxHoverBoxShadow: "0 2px 8px rgba(29, 109, 168, 0.5)",
+  /**
+   * Primary `NButton` ([Figma 62-6913](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6913&m=dev)):
+   * градиент, бордер #3978a8; hover / pressed — соседние варианты в том же COMPONENT_SET.
+   */
+  buttonPrimaryBorderColor: "#3978a8",
+  buttonPrimaryGradient:
+    "linear-gradient(180deg, #3f86ba 0%, #0e5c97 100%)",
+  buttonPrimaryGradientHover:
+    "linear-gradient(180deg, #4698d6 0%, #1670b4 100%)",
+  buttonPrimaryGradientPressed:
+    "linear-gradient(180deg, #06406c 0%, #256fa6 100%)",
+  buttonPrimaryTextShadow: "1px 1px 1px rgba(0, 0, 0, 0.1)",
+  /**
+   * Success `NButton` — состояния по макету:
+   * [62-6937](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6937&m=dev),
+   * [62-6947](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6947&m=dev),
+   * [62-6953](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6953&m=dev),
+   * [62-6959](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6959&m=dev).
+   * Градиенты заданы как у primary (180deg); disabled — тот же градиент, что default + opacity кнопки в Naive.
+   */
+  buttonSuccessBorderColor: "#3f8f46",
+  buttonSuccessGradient:
+    "linear-gradient(180deg, #5aad5f 0%, #2e7d32 100%)",
+  buttonSuccessGradientHover:
+    "linear-gradient(180deg, #6bc070 0%, #3a9a42 100%)",
+  buttonSuccessGradientPressed:
+    "linear-gradient(180deg, #1f5c24 0%, #358a3c 100%)",
+  buttonSuccessTextShadow: "1px 1px 1px rgba(0, 0, 0, 0.1)",
+  /**
+   * Default `NButton` — hover / pressed / disabled ([Figma 62-6907](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6907&m=dev),
+   * [62-6909](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6909&m=dev),
+   * [62-6911](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6911&m=dev)).
+   * Заливки hover/focus/disabled = `formReadonlyColor`; тень hover — `button-default.css` + `--iscod-checkbox-hover-shadow` (62-7071).
+   */
+  buttonDefaultColor: "#ffffff",
+  /** Чуть темнее `formReadonlyColor` (pressed, [Figma 62-6909](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6909&m=dev)) */
+  buttonDefaultColorPressed: "#e4ebf2",
 } as const;

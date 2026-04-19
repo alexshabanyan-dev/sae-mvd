@@ -31,4 +31,33 @@ export function applyIscodCssVariables() {
     "--iscod-switch-disabled-rail-active",
     ISCOD.formSwitchDisabledActiveRailColor,
   );
+  r.setProperty("--iscod-button-primary-gradient", ISCOD.buttonPrimaryGradient);
+  r.setProperty(
+    "--iscod-button-primary-gradient-hover",
+    ISCOD.buttonPrimaryGradientHover,
+  );
+  r.setProperty(
+    "--iscod-button-primary-gradient-pressed",
+    ISCOD.buttonPrimaryGradientPressed,
+  );
+  r.setProperty(
+    "--iscod-button-primary-text-shadow",
+    ISCOD.buttonPrimaryTextShadow,
+  );
+  r.setProperty(
+    "--iscod-button-success-gradient",
+    ISCOD.buttonSuccessGradient,
+  );
+  r.setProperty(
+    "--iscod-button-success-gradient-hover",
+    ISCOD.buttonSuccessGradientHover,
+  );
+  r.setProperty(
+    "--iscod-button-success-gradient-pressed",
+    ISCOD.buttonSuccessGradientPressed,
+  );
+  r.setProperty(
+    "--iscod-button-success-text-shadow",
+    ISCOD.buttonSuccessTextShadow,
+  );
 }

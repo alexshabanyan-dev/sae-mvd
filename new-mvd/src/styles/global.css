@@ -25,6 +25,32 @@
   /* Figma 62-7090 (switch disabled); в рантайме — из applyIscodCssVariables() */
   --iscod-switch-disabled-rail: #eef1f5;
   --iscod-switch-disabled-rail-active: #94b9d4;
+  /* Figma 62-6913 (primary button); в рантайме — из applyIscodCssVariables() */
+  --iscod-button-primary-gradient: linear-gradient(180deg, #3f86ba 0%, #0e5c97 100%);
+  --iscod-button-primary-gradient-hover: linear-gradient(
+    180deg,
+    #4698d6 0%,
+    #1670b4 100%
+  );
+  --iscod-button-primary-gradient-pressed: linear-gradient(
+    180deg,
+    #06406c 0%,
+    #256fa6 100%
+  );
+  --iscod-button-primary-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  /* Figma 62-6937…62-6959 (success button); в рантайме — из applyIscodCssVariables() */
+  --iscod-button-success-gradient: linear-gradient(180deg, #5aad5f 0%, #2e7d32 100%);
+  --iscod-button-success-gradient-hover: linear-gradient(
+    180deg,
+    #6bc070 0%,
+    #3a9a42 100%
+  );
+  --iscod-button-success-gradient-pressed: linear-gradient(
+    180deg,
+    #1f5c24 0%,
+    #358a3c 100%
+  );
+  --iscod-button-success-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 /**
