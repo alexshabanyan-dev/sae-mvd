@@ -56,7 +56,11 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
     border: `1px solid ${ISCOD.formBorderColor}`,
     borderHover: `1px solid ${ISCOD.formBorderColor}`,
     borderFocus: `1px solid ${ISCOD.formBorderColor}`,
-    boxShadowFocus: "none",
+    /**
+     * Фокус поля ([Figma 62-6845](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6845&m=dev)):
+     * glow #1d6da8, radius 4.
+     */
+    boxShadowFocus: `0 0 4px ${ISCOD.colorUiKitBlue}`,
     color: "#ffffff",
     colorFocus: "#ffffff",
     colorDisabled: ISCOD.formReadonlyColor,
@@ -160,5 +164,14 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
     labelHeightSmall: "16px",
     labelHeightMedium: "16px",
     labelPaddingHorizontal: "0 8px 0 0",
+    /**
+     * Подсказка под контролом ([Figma 62-6886](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6886&m=dev)):
+     * `feedbackFontSize*` → `--n-feedback-font-size`. У item без `size` дефолт **medium** (см. `form/src/utils.mjs`).
+     */
+    feedbackFontSizeSmall: ISCOD.formFeedbackFontSize,
+    feedbackFontSizeMedium: ISCOD.formFeedbackFontSize,
+    feedbackTextColorError: ISCOD.formFeedbackErrorTextColor,
+    feedbackHeightSmall: "18px",
+    feedbackHeightMedium: "18px",
   },
 };

@@ -39,6 +39,15 @@ export const ISCOD = {
   /** Main colours/blue — образцы ссылок в UI-kit ([Figma 62-6702](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6702&m=dev)). */
   colorUiKitBlue: "#1d6da8",
   formPlaceholderColor: "#b8bec6",
+  /**
+   * Текст подсказки ошибки под полем ([Figma 62-6886](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6886&m=dev)).
+   */
+  formFeedbackErrorTextColor: "#d94043",
+  /**
+   * Кегль текста подсказки / ошибки у `n-form-item` ([Figma 62-6886](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6886&m=dev)).
+   * Без обёртки `n-form` и без `size` на item Naive использует **medium** → нужен и `feedbackFontSizeMedium` в теме.
+   */
+  formFeedbackFontSize: "10px",
   formReadonlyColor: "#f4f6f8",
   /**
    * Main colours/dark grey (Figma): точка выбранного radio 62-7076, штрих галочки
