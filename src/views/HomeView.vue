@@ -8,7 +8,12 @@
       <n-gi :span="5">
         <BreadcrumbsExample />
       </n-gi>
+
+      <n-gi :span="14">
+        <AlertsExample />
+      </n-gi>
     </n-grid>
+    <PrintConfirmExample />
     <n-grid :cols="3" :x-gap="24" :y-gap="24" responsive="screen">
       <n-gi :span="1">
         <TypographyExample />
@@ -32,5 +37,7 @@ import DrawerExample from '@/naive/example/DrawerExample.vue'
 import InputsExample from '@/naive/example/inputs-example/InputsExample.vue'
 import SwitchExample from '@/naive/example/SwitchExample.vue'
 import TypographyExample from '@/naive/example/typography-example/TypographyExample.vue'
+import AlertsExample from '@/naive/example/AlertsExample.vue'
 import BreadcrumbsExample from '@/naive/example/BreadcrumbsExample.vue'
+import PrintConfirmExample from '@/naive/example/PrintConfirmExample.vue'
 </script>
