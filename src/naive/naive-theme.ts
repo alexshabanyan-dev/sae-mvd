@@ -1,6 +1,6 @@
 import type { GlobalThemeOverrides } from "naive-ui";
 
-import { ISCOD } from "./tokens";
+import { MVD } from "./tokens";
 
 /** Типографика гайда: body 14px / 22px интерлиньяж ≈ 22/14 */
 const BODY_SIZE = "14px";
@@ -22,14 +22,14 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
     fontSizeHuge: "18px",
     lineHeight: BODY_LINE_HEIGHT,
     /** Согласовано с цветом ссылок §4.2 */
-    primaryColor: ISCOD.colorLink,
+    primaryColor: MVD.colorLink,
     primaryColorHover: "#256b9c",
     primaryColorPressed: "#1f5984",
-    primaryColorSuppl: ISCOD.colorLinkMenuIdle,
+    primaryColorSuppl: MVD.colorLinkMenuIdle,
   },
   /** Фон страницы и прозрачная оболочка под кастомную шапку ИСОД */
   Layout: {
-    color: ISCOD.pageBackgroundColor,
+    color: MVD.pageBackgroundColor,
     headerColor: "transparent",
     headerBorderColor: "transparent",
   },
@@ -44,7 +44,7 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
     pFontSize: BODY_SIZE,
     pLineHeight: BODY_LINE_HEIGHT,
     /** <n-a> внутри типографики */
-    aTextColor: ISCOD.colorLink,
+    aTextColor: MVD.colorLink,
   },
   Input: {
     heightSmall: "36px",
@@ -53,33 +53,33 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
     fontSizeMedium: "13px",
     lineHeight: "20px",
     borderRadius: "3px",
-    border: `1px solid ${ISCOD.formBorderColor}`,
-    borderHover: `1px solid ${ISCOD.formBorderColor}`,
-    borderFocus: `1px solid ${ISCOD.formBorderColor}`,
+    border: `1px solid ${MVD.formBorderColor}`,
+    borderHover: `1px solid ${MVD.formBorderColor}`,
+    borderFocus: `1px solid ${MVD.formBorderColor}`,
     /**
      * Фокус поля ([Figma 62-6845](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6845&m=dev)):
      * glow #1d6da8, radius 4.
      */
-    boxShadowFocus: `0 0 4px ${ISCOD.colorUiKitBlue}`,
+    boxShadowFocus: `0 0 4px ${MVD.colorUiKitBlue}`,
     color: "#ffffff",
     colorFocus: "#ffffff",
-    colorDisabled: ISCOD.formReadonlyColor,
-    textColor: ISCOD.formTextColor,
+    colorDisabled: MVD.formReadonlyColor,
+    textColor: MVD.formTextColor,
     textColorDisabled: "#64727d",
-    placeholderColor: ISCOD.formPlaceholderColor,
-    placeholderColorDisabled: ISCOD.formPlaceholderColor,
-    iconColor: ISCOD.formPlaceholderColor,
-    iconColorHover: ISCOD.formPlaceholderColor,
-    iconColorPressed: ISCOD.formPlaceholderColor,
+    placeholderColor: MVD.formPlaceholderColor,
+    placeholderColorDisabled: MVD.formPlaceholderColor,
+    iconColor: MVD.formPlaceholderColor,
+    iconColorHover: MVD.formPlaceholderColor,
+    iconColorPressed: MVD.formPlaceholderColor,
   },
   DatePicker: {
     panelBorderRadius: "3px",
     panelColor: "#ffffff",
-    panelTextColor: ISCOD.formTextColor,
+    panelTextColor: MVD.formTextColor,
     itemBorderRadius: "3px",
-    itemTextColor: ISCOD.formTextColor,
-    iconColor: ISCOD.formPlaceholderColor,
-    iconColorDisabled: ISCOD.formPlaceholderColor,
+    itemTextColor: MVD.formTextColor,
+    iconColor: MVD.formPlaceholderColor,
+    iconColorDisabled: MVD.formPlaceholderColor,
     panelBoxShadow: "0 4px 12px rgba(42, 60, 73, 0.12)",
   },
   Switch: {
@@ -87,8 +87,8 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
      * Рельс выкл.: [Figma 62-7087](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-7087&m=dev) —
      * тот же нейтральный fill, что `formReadonlyColor` (#f4f6f8), не `#e2e8f1`.
      */
-    railColor: ISCOD.formReadonlyColor,
-    railColorActive: ISCOD.formSwitchActiveRailColor,
+    railColor: MVD.formReadonlyColor,
+    railColorActive: MVD.formSwitchActiveRailColor,
     buttonColor: "#ffffff",
     /**
      * В naive-ui 2.44 у NSwitch в стилях нет отдельного :hover по рельсу и нет
@@ -98,7 +98,7 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
     boxShadowFocus: "0 2px 8px rgba(29, 109, 168, 0.5)",
     /**
      * Disabled: в naive-ui 2.44 нет отдельных токенов рельса; внешний вид — global.css
-     * (Figma 62-7090, `--iscod-switch-disabled-rail*`).
+     * (Figma 62-7090, `--mvd-switch-disabled-rail*`).
      */
   },
   Radio: {
@@ -106,42 +106,42 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
     radioSizeSmall: "20px",
     radioSizeMedium: "20px",
     /** Покой: светлый фон круга (как неотмеченный в макете). */
-    color: ISCOD.formSwitchRailColor,
+    color: MVD.formSwitchRailColor,
     /**
      * Figma 62-7076 (Chosen): заливка круга #f4f6f8 — в Naive это `colorActive`
      * на `.n-radio__dot` в состоянии checked (radio.cssr.ts).
      */
-    colorActive: ISCOD.formReadonlyColor,
+    colorActive: MVD.formReadonlyColor,
     /** Внутренняя точка (::before) — серый диск, не синий primary. */
-    dotColorActive: ISCOD.formRadioChosenDotColor,
+    dotColorActive: MVD.formRadioChosenDotColor,
     /** Кольцо в покое — нейтральный бордер, как в макете. */
-    boxShadow: `inset 0 0 0 1px ${ISCOD.formBorderColor}`,
+    boxShadow: `inset 0 0 0 1px ${MVD.formBorderColor}`,
     /**
      * Figma 62-7082 (hover): тот же inset-бордер + внешний glow, как у checkbox.
      * В Naive это именно токен `boxShadowHover` (см. radio.cssr.ts).
      */
-    boxShadowHover: `inset 0 0 0 1px ${ISCOD.formBorderColor}, ${ISCOD.formCheckboxHoverBoxShadow}`,
+    boxShadowHover: `inset 0 0 0 1px ${MVD.formBorderColor}, ${MVD.formCheckboxHoverBoxShadow}`,
     /** Figma 62-7076: выбран — inset-бордер #d7dee6. */
-    boxShadowActive: `inset 0 0 0 1px ${ISCOD.formBorderColor}`,
-    boxShadowDisabled: `inset 0 0 0 1px ${ISCOD.formBorderColor}`,
-    boxShadowFocus: `inset 0 0 0 1px ${ISCOD.formBorderColor}, ${ISCOD.formCheckboxHoverBoxShadow}`,
+    boxShadowActive: `inset 0 0 0 1px ${MVD.formBorderColor}`,
+    boxShadowDisabled: `inset 0 0 0 1px ${MVD.formBorderColor}`,
+    boxShadowFocus: `inset 0 0 0 1px ${MVD.formBorderColor}, ${MVD.formCheckboxHoverBoxShadow}`,
   },
   Checkbox: {
     sizeSmall: "20px",
     sizeMedium: "20px",
     borderRadius: "3px",
-    border: `1px solid ${ISCOD.formBorderColor}`,
+    border: `1px solid ${MVD.formBorderColor}`,
     /**
      * Figma 62-7071 (hover): бордер остаётся #d7dee6. В Naive hover подставляет
      * `borderChecked` — держим как у `border`, тень hover задаётся в global.css
-     * через --iscod-checkbox-hover-shadow (у Naive нет токена тени на :hover).
+     * через --mvd-checkbox-hover-shadow (у Naive нет токена тени на :hover).
      */
-    borderChecked: `1px solid ${ISCOD.formBorderColor}`,
-    borderFocus: `1px solid ${ISCOD.formBorderColor}`,
-    color: ISCOD.formSwitchRailColor,
-    colorChecked: ISCOD.formSwitchRailColor,
+    borderChecked: `1px solid ${MVD.formBorderColor}`,
+    borderFocus: `1px solid ${MVD.formBorderColor}`,
+    color: MVD.formSwitchRailColor,
+    colorChecked: MVD.formSwitchRailColor,
     /** Figma 62-7069: серая галочка; геометрия — дефолт Naive (path не настраивается). */
-    checkMarkColor: ISCOD.formRadioChosenDotColor,
+    checkMarkColor: MVD.formRadioChosenDotColor,
     boxShadowFocus: "none",
   },
   /**
@@ -149,32 +149,32 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
    * кегль `collapseSectionTitleFontSize` (H3 в гайде — 16px), 700, цвет текста ИСОД; стрелка мягче.
    */
   Collapse: {
-    titleFontSize: ISCOD.collapseSectionTitleFontSize,
+    titleFontSize: MVD.collapseSectionTitleFontSize,
     titleFontWeight: "700",
-    titleTextColor: ISCOD.formTextColor,
-    arrowColor: ISCOD.formPlaceholderColor,
-    dividerColor: ISCOD.formBorderColor,
+    titleTextColor: MVD.formTextColor,
+    arrowColor: MVD.formPlaceholderColor,
+    dividerColor: MVD.formBorderColor,
   },
   /**
    * Primary: бордер и «сплошные» токены под ripple/фолбэк; градиент — `button-primary.css`.
    */
   Button: {
-    borderPrimary: `1px solid ${ISCOD.buttonPrimaryBorderColor}`,
-    borderHoverPrimary: `1px solid ${ISCOD.buttonPrimaryBorderColor}`,
-    borderPressedPrimary: `1px solid ${ISCOD.buttonPrimaryBorderColor}`,
-    borderFocusPrimary: `1px solid ${ISCOD.buttonPrimaryBorderColor}`,
-    borderDisabledPrimary: `1px solid ${ISCOD.buttonPrimaryBorderColor}`,
+    borderPrimary: `1px solid ${MVD.buttonPrimaryBorderColor}`,
+    borderHoverPrimary: `1px solid ${MVD.buttonPrimaryBorderColor}`,
+    borderPressedPrimary: `1px solid ${MVD.buttonPrimaryBorderColor}`,
+    borderFocusPrimary: `1px solid ${MVD.buttonPrimaryBorderColor}`,
+    borderDisabledPrimary: `1px solid ${MVD.buttonPrimaryBorderColor}`,
     colorPrimary: "#3f86ba",
     colorHoverPrimary: "#4698d6",
     colorPressedPrimary: "#06406c",
     colorFocusPrimary: "#4698d6",
     colorDisabledPrimary: "#3f86ba",
     rippleColorPrimary: "#3f86ba",
-    borderSuccess: `1px solid ${ISCOD.buttonSuccessBorderColor}`,
-    borderHoverSuccess: `1px solid ${ISCOD.buttonSuccessBorderColor}`,
-    borderPressedSuccess: `1px solid ${ISCOD.buttonSuccessBorderColor}`,
-    borderFocusSuccess: `1px solid ${ISCOD.buttonSuccessBorderColor}`,
-    borderDisabledSuccess: `1px solid ${ISCOD.buttonSuccessBorderColor}`,
+    borderSuccess: `1px solid ${MVD.buttonSuccessBorderColor}`,
+    borderHoverSuccess: `1px solid ${MVD.buttonSuccessBorderColor}`,
+    borderPressedSuccess: `1px solid ${MVD.buttonSuccessBorderColor}`,
+    borderFocusSuccess: `1px solid ${MVD.buttonSuccessBorderColor}`,
+    borderDisabledSuccess: `1px solid ${MVD.buttonSuccessBorderColor}`,
     colorSuccess: "#5aad5f",
     colorHoverSuccess: "#6bc070",
     colorPressedSuccess: "#1f5c24",
@@ -184,22 +184,22 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
     /**
      * Default: заливка/бордер/текст из токенов формы и синего UI-kit; hover-glow — `button-default.css`.
      */
-    color: ISCOD.buttonDefaultColor,
-    colorHover: ISCOD.formReadonlyColor,
-    colorPressed: ISCOD.buttonDefaultColorPressed,
-    colorFocus: ISCOD.formReadonlyColor,
-    colorDisabled: ISCOD.formReadonlyColor,
-    textColor: ISCOD.formTextColor,
-    textColorHover: ISCOD.colorLink,
-    textColorPressed: ISCOD.colorLink,
-    textColorFocus: ISCOD.colorLink,
-    textColorDisabled: ISCOD.formRadioChosenDotColor,
-    border: `1px solid ${ISCOD.formBorderColor}`,
-    borderHover: `1px solid ${ISCOD.colorUiKitBlue}`,
-    borderPressed: `1px solid ${ISCOD.colorUiKitBlue}`,
-    borderFocus: `1px solid ${ISCOD.colorUiKitBlue}`,
-    borderDisabled: `1px solid ${ISCOD.formBorderColor}`,
-    rippleColor: ISCOD.colorUiKitBlue,
+    color: MVD.buttonDefaultColor,
+    colorHover: MVD.formReadonlyColor,
+    colorPressed: MVD.buttonDefaultColorPressed,
+    colorFocus: MVD.formReadonlyColor,
+    colorDisabled: MVD.formReadonlyColor,
+    textColor: MVD.formTextColor,
+    textColorHover: MVD.colorLink,
+    textColorPressed: MVD.colorLink,
+    textColorFocus: MVD.colorLink,
+    textColorDisabled: MVD.formRadioChosenDotColor,
+    border: `1px solid ${MVD.formBorderColor}`,
+    borderHover: `1px solid ${MVD.colorUiKitBlue}`,
+    borderPressed: `1px solid ${MVD.colorUiKitBlue}`,
+    borderFocus: `1px solid ${MVD.colorUiKitBlue}`,
+    borderDisabled: `1px solid ${MVD.formBorderColor}`,
+    rippleColor: MVD.colorUiKitBlue,
   },
   /**
    * Выпадающие меню (`n-dropdown`): панель и пункты в духе полей и DatePicker
@@ -208,12 +208,12 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
   Dropdown: {
     borderRadius: "3px",
     color: "#ffffff",
-    optionTextColor: ISCOD.formTextColor,
-    optionTextColorHover: ISCOD.formTextColor,
-    optionTextColorActive: ISCOD.colorLink,
-    optionTextColorChildActive: ISCOD.colorLink,
-    dividerColor: ISCOD.formBorderColor,
-    optionColorHover: ISCOD.formReadonlyColor,
+    optionTextColor: MVD.formTextColor,
+    optionTextColorHover: MVD.formTextColor,
+    optionTextColorActive: MVD.colorLink,
+    optionTextColorChildActive: MVD.colorLink,
+    dividerColor: MVD.formBorderColor,
+    optionColorHover: MVD.formReadonlyColor,
     optionColorActive: "rgba(44, 119, 174, 0.1)",
     peers: {
       Popover: {
@@ -224,7 +224,7 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
   },
   Form: {
     asteriskColor: "#fb000f",
-    labelTextColor: ISCOD.formTextColor,
+    labelTextColor: MVD.formTextColor,
     labelFontWeight: "700",
     labelFontSizeLeftSmall: "14px",
     labelFontSizeLeftMedium: "14px",
@@ -235,10 +235,20 @@ export const naiveThemeOverrides: GlobalThemeOverrides = {
      * Подсказка под контролом ([Figma 62-6886](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6886&m=dev)):
      * `feedbackFontSize*` → `--n-feedback-font-size`. У item без `size` дефолт **medium** (см. `form/src/utils.mjs`).
      */
-    feedbackFontSizeSmall: ISCOD.formFeedbackFontSize,
-    feedbackFontSizeMedium: ISCOD.formFeedbackFontSize,
-    feedbackTextColorError: ISCOD.formFeedbackErrorTextColor,
+    feedbackFontSizeSmall: MVD.formFeedbackFontSize,
+    feedbackFontSizeMedium: MVD.formFeedbackFontSize,
+    feedbackTextColorError: MVD.formFeedbackErrorTextColor,
     feedbackHeightSmall: "18px",
     feedbackHeightMedium: "18px",
+  },
+  /** Подзаголовок: хлебные крошки ([Figma 62-7265](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-7265&m=dev)). */
+  Breadcrumb: {
+    fontSize: "12px",
+    itemLineHeight: "12px",
+    itemTextColor: "#2a3c49",
+    itemTextColorHover: "#2a3c49",
+    itemTextColorPressed: "#2a3c49",
+    itemTextColorActive: "#2a3c49",
+    separatorColor: "#b8bec6",
   },
 };

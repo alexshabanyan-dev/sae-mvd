@@ -1,8 +1,8 @@
 /**
- * Токены по гайду ИСОД (§4.2 ссылки + типографика).
+ * Токены по гайду МВД (п. 4.2 ссылки + типографика).
  * Единственное место для значений из макета: цвета, отступы и т.п.
  */
-export const ISCOD = {
+export const MVD = {
   colorLink: "#2c77ae",
   colorLinkMenuIdle: "#7392ae",
   /** Подчёркивание при наведении: 50% от цвета ссылки */
@@ -104,7 +104,7 @@ export const ISCOD = {
    * Default `NButton` — hover / pressed / disabled ([Figma 62-6907](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6907&m=dev),
    * [62-6909](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6909&m=dev),
    * [62-6911](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6911&m=dev)).
-   * Заливки hover/focus/disabled = `formReadonlyColor`; тень hover — `button-default.css` + `--iscod-checkbox-hover-shadow` (62-7071).
+   * Заливки hover/focus/disabled = `formReadonlyColor`; тень hover — `button-default.css` + `--mvd-checkbox-hover-shadow` (62-7071).
    */
   buttonDefaultColor: "#ffffff",
   /** Чуть темнее `formReadonlyColor` (pressed, [Figma 62-6909](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6909&m=dev)) */

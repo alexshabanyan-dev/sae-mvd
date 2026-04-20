@@ -1,0 +1,17 @@
+/**
+ * NSwitch: hover рельса выкл. ([Figma 62-7096](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-7096&m=dev)) и disabled рельса ([62-7090](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-7090&m=dev)).
+ * В naive-ui 2.44 нет `railColorHover` / цветов disabled рельса — только через CSS.
+ */
+.n-switch:not(.n-switch--disabled):not(.n-switch--active):not(.n-switch--loading):hover
+  .n-switch__rail {
+  background-color: var(--mvd-switch-hover-rail);
+}
+
+.n-switch.n-switch--disabled .n-switch__rail {
+  opacity: 1;
+  background-color: var(--mvd-switch-disabled-rail);
+}
+
+.n-switch.n-switch--disabled.n-switch--active .n-switch__rail {
+  background-color: var(--mvd-switch-disabled-rail-active);
+}

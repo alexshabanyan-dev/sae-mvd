@@ -4,7 +4,7 @@
  */
 .n-button.n-button--default-type:not(.n-button--ghost):not(.n-button--color):not(.n-button--disabled):not(.n-button--loading):hover,
 .n-button.n-button--default-type:not(.n-button--ghost):not(.n-button--color):not(.n-button--disabled):not(.n-button--loading):focus {
-  box-shadow: var(--iscod-checkbox-hover-shadow);
+  box-shadow: var(--mvd-checkbox-hover-shadow);
 }
 
 .n-button.n-button--default-type:not(.n-button--ghost):not(.n-button--color):not(.n-button--disabled):not(.n-button--loading):active,

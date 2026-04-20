@@ -1,0 +1,9 @@
+/**
+ * Checkbox hover по макету: бордер остаётся нейтральным (через borderChecked в теме Naive),
+ * тень Naive на hover не задаёт — только через CSS (см. naive-ui checkbox index.cssr).
+ * [Figma 62-7071](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-7071&m=dev) — `--mvd-checkbox-hover-shadow` в :root (`global.css` / `applyMvdCssVariables`).
+ */
+.n-checkbox:not(.n-checkbox--disabled):not(.n-checkbox--checked):hover
+  .n-checkbox-box__border {
+  box-shadow: var(--mvd-checkbox-hover-shadow);
+}

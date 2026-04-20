@@ -51,7 +51,7 @@
               class="typography-example__section-title"
               :style="{
                 margin: 0,
-                color: ISCOD.formTextColor,
+                color: MVD.formTextColor,
                 fontSize: '24px',
                 fontWeight: '700',
                 lineHeight: '28px',
@@ -163,7 +163,7 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue'
 
-import { ISCOD } from '@/naive/tokens'
+import { MVD } from '@/naive/tokens'
 import { NCard, NCollapse, NCollapseItem, NFlex, NH1, NH2, NH3, NH4, NH5, NText } from 'naive-ui'
 
 /**
@@ -193,7 +193,7 @@ const cardBodyStretch: CSSProperties = {
   width: '100%',
 }
 
-const figmaBodyTextColor = ISCOD.formTextColor
+const figmaBodyTextColor = MVD.formTextColor
 
 /** Кегли / трекинг из [Figma 62-6702](https://www.figma.com/design/gYFtjvqz9BOa97CPbA77xg/Untitled?node-id=62-6702&m=dev). */
 const headingStyles = {

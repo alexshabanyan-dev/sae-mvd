@@ -2,102 +2,71 @@
  * Утилиты ссылок по гайду — цвета из :root (ставятся из naive/tokens.ts в main.ts).
  */
 :root {
-  /* Фон всего приложения (Figma 1-869); в рантайме — из applyIscodCssVariables() */
-  --iscod-page-background: #eef2f6;
-  --iscod-color-link: #2c77ae;
-  --iscod-color-link-menu-idle: #7392ae;
-  --iscod-color-link-underline-hover: rgba(44, 119, 174, 0.5);
-  --iscod-font-size-heading-link: 16px;
-  /* Переопределяются в main через applyIscodCssVariables() */
-  --iscod-header-gradient: linear-gradient(
+  /* Фон всего приложения (Figma 1-869); в рантайме — из applyMvdCssVariables() */
+  --mvd-page-background: #eef2f6;
+  --mvd-color-link: #2c77ae;
+  --mvd-color-link-menu-idle: #7392ae;
+  --mvd-color-link-underline-hover: rgba(44, 119, 174, 0.5);
+  --mvd-font-size-heading-link: 16px;
+  /* Переопределяются в main через applyMvdCssVariables() */
+  --mvd-header-gradient: linear-gradient(
     180deg,
     #1b67a6 0%,
     #0a5a96 42%,
     #004080 100%
   );
-  --iscod-header-text: #ffffff;
-  --iscod-header-watermark-opacity: 0.055;
-  --iscod-header-rule: rgba(0, 0, 0, 0.38);
-  /* Figma 62-7071; в рантайме — из applyIscodCssVariables() */
-  --iscod-checkbox-hover-shadow: 0 2px 8px rgba(29, 109, 168, 0.5);
-  /* Figma 62-7096 (switch hover, выкл.); в рантайме — из applyIscodCssVariables() */
-  --iscod-switch-hover-rail: #d7dee6;
-  /* Figma 62-7090 (switch disabled); в рантайме — из applyIscodCssVariables() */
-  --iscod-switch-disabled-rail: #eef1f5;
-  --iscod-switch-disabled-rail-active: #94b9d4;
-  /* Figma 62-6913 (primary button); в рантайме — из applyIscodCssVariables() */
-  --iscod-button-primary-gradient: linear-gradient(180deg, #3f86ba 0%, #0e5c97 100%);
-  --iscod-button-primary-gradient-hover: linear-gradient(
+  --mvd-header-text: #ffffff;
+  --mvd-header-watermark-opacity: 0.055;
+  --mvd-header-rule: rgba(0, 0, 0, 0.38);
+  /* Figma 62-7071; в рантайме — из applyMvdCssVariables() */
+  --mvd-checkbox-hover-shadow: 0 2px 8px rgba(29, 109, 168, 0.5);
+  /* Figma 62-7096 (switch hover, выкл.); в рантайме — из applyMvdCssVariables() */
+  --mvd-switch-hover-rail: #d7dee6;
+  /* Figma 62-7090 (switch disabled); в рантайме — из applyMvdCssVariables() */
+  --mvd-switch-disabled-rail: #eef1f5;
+  --mvd-switch-disabled-rail-active: #94b9d4;
+  /* Figma 62-6913 (primary button); в рантайме — из applyMvdCssVariables() */
+  --mvd-button-primary-gradient: linear-gradient(180deg, #3f86ba 0%, #0e5c97 100%);
+  --mvd-button-primary-gradient-hover: linear-gradient(
     180deg,
     #4698d6 0%,
     #1670b4 100%
   );
-  --iscod-button-primary-gradient-pressed: linear-gradient(
+  --mvd-button-primary-gradient-pressed: linear-gradient(
     180deg,
     #06406c 0%,
     #256fa6 100%
   );
-  --iscod-button-primary-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  /* Figma 62-6937…62-6959 (success button); в рантайме — из applyIscodCssVariables() */
-  --iscod-button-success-gradient: linear-gradient(180deg, #5aad5f 0%, #2e7d32 100%);
-  --iscod-button-success-gradient-hover: linear-gradient(
+  --mvd-button-primary-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  /* Figma 62-6937…62-6959 (success button); в рантайме — из applyMvdCssVariables() */
+  --mvd-button-success-gradient: linear-gradient(180deg, #5aad5f 0%, #2e7d32 100%);
+  --mvd-button-success-gradient-hover: linear-gradient(
     180deg,
     #6bc070 0%,
     #3a9a42 100%
   );
-  --iscod-button-success-gradient-pressed: linear-gradient(
+  --mvd-button-success-gradient-pressed: linear-gradient(
     180deg,
     #1f5c24 0%,
     #358a3c 100%
   );
-  --iscod-button-success-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  --mvd-button-success-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-/**
- * Checkbox hover по макету: бордер остаётся нейтральным (через borderChecked в теме Naive),
- * тень Naive на hover не задаёт — только через CSS (см. naive-ui checkbox index.cssr).
- */
-.n-checkbox:not(.n-checkbox--disabled):not(.n-checkbox--checked):hover
-  .n-checkbox-box__border {
-  box-shadow: var(--iscod-checkbox-hover-shadow);
-}
-
-/**
- * Switch hover (Figma 62-7096): рельс выкл. состояния — #d7dee6.
- * В naive-ui 2.44 у NSwitch нет railColorHover в GlobalThemeOverrides.
- */
-.n-switch:not(.n-switch--disabled):not(.n-switch--active):not(.n-switch--loading):hover
-  .n-switch__rail {
-  background-color: var(--iscod-switch-hover-rail);
-}
-
-/**
- * Switch disabled (Figma 62-7090): в naive-ui нет цветов рельса для disabled, только
- * `opacity: 0.5` на рельсе — снимаем затемнение и задаём сплошные цвета из токенов.
- */
-.n-switch.n-switch--disabled .n-switch__rail {
-  opacity: 1;
-  background-color: var(--iscod-switch-disabled-rail);
-}
-
-.n-switch.n-switch--disabled.n-switch--active .n-switch__rail {
-  background-color: var(--iscod-switch-disabled-rail-active);
-}
-
-a.iscod-link {
-  color: var(--iscod-color-link);
+a.mvd-link {
+  color: var(--mvd-color-link);
   text-decoration: none;
   text-underline-offset: 2px;
 }
 
-a.iscod-link:hover {
+a.mvd-link:hover {
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-decoration-color: var(--iscod-color-link-underline-hover);
+  text-decoration-color: var(--mvd-color-link-underline-hover);
 }
 
-a.iscod-link--heading {
-  font-size: var(--iscod-font-size-heading-link);
+a.mvd-link--heading {
+  font-size: var(--mvd-font-size-heading-link);
   font-weight: 700;
 }
 
@@ -113,13 +82,13 @@ a.iscod-link--heading {
 html {
   -webkit-text-size-adjust: 100%;
   min-height: 100%;
-  background-color: var(--iscod-page-background);
+  background-color: var(--mvd-page-background);
 }
 
 body {
   margin: 0;
   min-height: 100%;
-  background-color: var(--iscod-page-background);
+  background-color: var(--mvd-page-background);
 }
 
 /**
@@ -131,8 +100,8 @@ body,
   font-family: "PT Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-/** Холст приложения — тот же цвет, что `ISCOD.pageBackgroundColor` / `Layout.color`. */
+/** Холст приложения — тот же цвет, что `MVD.pageBackgroundColor` / `Layout.color`. */
 #app {
   min-height: 100vh;
-  background-color: var(--iscod-page-background);
+  background-color: var(--mvd-page-background);
 }

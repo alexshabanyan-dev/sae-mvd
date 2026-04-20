@@ -18,16 +18,16 @@
 <script setup lang="ts">
 import { NLayout, NLayoutContent, NLayoutFooter, NLayoutHeader } from 'naive-ui'
 
-import { ISCOD } from '@/naive/tokens'
+import { MVD } from '@/naive/tokens'
 
 import Footer from './Footer.vue'
 import Header from './Header.vue'
-import SubHeader from './SubHeader.vue'
+import SubHeader from './subheader/SubHeader.vue'
 
 /** Фон шапки под SubHeader и фон полей контента — как `Layout.color`. */
-const pageBackgroundColor = ISCOD.pageBackgroundColor
+const pageBackgroundColor = MVD.pageBackgroundColor
 /** Отступ после заголовка; фон как у контента (`mainContentStyle`), без отдельной белой подложки. */
-const pageBodyPaddingTop = ISCOD.pageBodyPaddingTop
+const pageBodyPaddingTop = MVD.pageBodyPaddingTop
 
 const layoutScrollStyle = {
   minHeight: '100vh',

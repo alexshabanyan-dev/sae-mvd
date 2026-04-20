@@ -1,22 +1,22 @@
 <template>
-  <footer class="iscod-footer" role="contentinfo">
-    <n-flex class="iscod-footer__inner" justify="space-between" align="center" :wrap="false" :size="24">
-      <n-flex class="iscod-footer__copyright" align="start" :wrap="false" :size="8">
-        <span class="iscod-footer__text">©</span>
-        <span class="iscod-footer__text">{{ copyrightText }}</span>
+  <footer class="mvd-footer" role="contentinfo">
+    <n-flex class="mvd-footer__inner" justify="space-between" align="center" :wrap="false" :size="24">
+      <n-flex class="mvd-footer__copyright" align="start" :wrap="false" :size="8">
+        <span class="mvd-footer__text">©</span>
+        <span class="mvd-footer__text">{{ copyrightText }}</span>
       </n-flex>
 
-      <n-flex class="iscod-footer__right" align="center" :wrap="false" :size="32">
-        <n-flex vertical class="iscod-footer__support" align="end" :wrap="false" :size="0">
-          <span class="iscod-footer__text iscod-footer__text--right">{{ supportLine1 }}</span>
-          <span class="iscod-footer__text iscod-footer__text--right">{{ supportLine2 }}</span>
+      <n-flex class="mvd-footer__right" align="center" :wrap="false" :size="32">
+        <n-flex vertical class="mvd-footer__support" align="end" :wrap="false" :size="0">
+          <span class="mvd-footer__text mvd-footer__text--right">{{ supportLine1 }}</span>
+          <span class="mvd-footer__text mvd-footer__text--right">{{ supportLine2 }}</span>
         </n-flex>
 
-        <div class="iscod-footer__divider" aria-hidden="true" />
+        <div class="mvd-footer__divider" aria-hidden="true" />
 
-        <n-flex vertical class="iscod-footer__contacts" align="end" :wrap="false" :size="0">
-          <span class="iscod-footer__text iscod-footer__text--right">{{ email }}</span>
-          <span class="iscod-footer__text iscod-footer__text--right">{{ messageCta }}</span>
+        <n-flex vertical class="mvd-footer__contacts" align="end" :wrap="false" :size="0">
+          <span class="mvd-footer__text mvd-footer__text--right">{{ email }}</span>
+          <span class="mvd-footer__text mvd-footer__text--right">{{ messageCta }}</span>
         </n-flex>
       </n-flex>
     </n-flex>
@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-defineOptions({ name: 'IscodFooter' })
+defineOptions({ name: 'MvdFooter' })
 import { NFlex } from 'naive-ui'
 
 withDefaults(
@@ -46,7 +46,7 @@ withDefaults(
 </script>
 
 <style scoped>
-.iscod-footer {
+.mvd-footer {
   box-sizing: border-box;
   width: 100%;
   min-height: 68px;
@@ -60,37 +60,37 @@ withDefaults(
     sans-serif;
 }
 
-.iscod-footer__inner {
+.mvd-footer__inner {
   box-sizing: border-box;
   width: 100%;
   min-height: 68px;
   padding-inline: 32px;
 }
 
-.iscod-footer__copyright {
+.mvd-footer__copyright {
   min-width: 0;
 }
 
-.iscod-footer__right {
+.mvd-footer__right {
   flex-shrink: 0;
 }
 
-.iscod-footer__contacts {
+.mvd-footer__contacts {
   flex-shrink: 0;
 }
 
-.iscod-footer__support {
+.mvd-footer__support {
   flex-shrink: 0;
 }
 
-.iscod-footer__divider {
+.mvd-footer__divider {
   width: 1px;
   height: 40px;
   background: #ffffff;
   opacity: 0.3;
 }
 
-.iscod-footer__text {
+.mvd-footer__text {
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
@@ -99,7 +99,7 @@ withDefaults(
   white-space: nowrap;
 }
 
-.iscod-footer__text--right {
+.mvd-footer__text--right {
   text-align: right;
 }
 </style>

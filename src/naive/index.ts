@@ -1,4 +1,4 @@
 export { naiveAppLocaleRu } from "./app-locale-ru";
 export { naiveThemeOverrides } from "./naive-theme";
-export { ISCOD } from "./tokens";
-export { applyIscodCssVariables } from "./apply-iscod-css-vars";
+export { MVD } from "./tokens";
+export { applyMvdCssVariables } from "./apply-mvd-css-vars";

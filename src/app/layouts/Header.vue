@@ -1,46 +1,46 @@
 <template>
-  <header class="iscod-header" role="banner">
+  <header class="mvd-header" role="banner">
     <n-flex
-      class="iscod-header__inner"
+      class="mvd-header__inner"
       justify="space-between"
       align="center"
       :wrap="false"
       :size="24"
     >
-      <n-flex class="iscod-header__brand" align="center" :wrap="false" :size="10">
-        <div class="iscod-header__system-logo" aria-label="Логотип ИСОД">
-          <img class="iscod-header__system-logo-main" :src="iscodLogoUrl" alt="ЦИФРОПОЛ ИСОД" />
+      <n-flex class="mvd-header__brand" align="center" :wrap="false" :size="10">
+        <div class="mvd-header__system-logo" aria-label="Логотип МВД">
+          <img class="mvd-header__system-logo-main" :src="mvdWordmarkUrl" alt="ЦИФРОПОЛ МВД" />
         </div>
 
-        <div class="iscod-header__logo-slot">
+        <div class="mvd-header__logo-slot">
           <div
-            class="iscod-header__watermark"
+            class="mvd-header__watermark"
             aria-hidden="true"
             :style="{ backgroundImage: `url(${logoUrl})` }"
           />
           <img
-            class="iscod-header__logo"
+            class="mvd-header__logo"
             :src="logoUrl"
             width="82"
             height="48"
             alt="Герб МВД России"
           />
         </div>
-        <n-flex vertical class="iscod-header__titles" :wrap="false" :size="3">
-          <span class="iscod-header__org">МВД России</span>
-          <span class="iscod-header__service">{{ serviceNameTop }}</span>
-          <span class="iscod-header__service">{{ serviceNameBottom }}</span>
+        <n-flex vertical class="mvd-header__titles" :wrap="false" :size="3">
+          <span class="mvd-header__org">МВД России</span>
+          <span class="mvd-header__service">{{ serviceNameTop }}</span>
+          <span class="mvd-header__service">{{ serviceNameBottom }}</span>
         </n-flex>
       </n-flex>
 
-      <n-flex class="iscod-header__actions" align="center" :wrap="false" :size="0">
-        <n-flex class="iscod-header__user" align="center" :wrap="false" :size="8">
+      <n-flex class="mvd-header__actions" align="center" :wrap="false" :size="0">
+        <n-flex class="mvd-header__user" align="center" :wrap="false" :size="8">
           <MvdIcon name="account" tone="white" :size="16" />
-          <span class="iscod-header__user-name">{{ userDisplayName }}</span>
+          <span class="mvd-header__user-name">{{ userDisplayName }}</span>
         </n-flex>
 
         <n-button
-          class="iscod-header__icon-btn"
+          class="mvd-header__icon-btn"
           quaternary
           size="large"
           :bordered="false"
@@ -53,7 +53,7 @@
         </n-button>
 
         <n-button
-          class="iscod-header__icon-btn"
+          class="mvd-header__icon-btn"
           quaternary
           size="large"
           :bordered="false"
@@ -70,12 +70,12 @@
 </template>
 
 <script setup lang="ts">
-defineOptions({ name: 'IscodHeader' })
+defineOptions({ name: 'MvdHeader' })
 /**
- * Шапка ИСОД: бренд и градиент по PDF; раскладка — Naive Flex / Button / Divider.
+ * Шапка МВД: бренд и градиент по PDF; раскладка — Naive Flex / Button / Divider.
  */
 import { NButton, NFlex } from 'naive-ui'
-import iscodLogoUrl from '@/assets/images/iscod-logo.svg?url'
+import mvdWordmarkUrl from '@/assets/images/mvd-wordmark.svg?url'
 import logoUrl from '@/assets/images/mvd-logo.svg?url'
 import { MvdIcon } from '@/shared/ui/mvd-icon'
 
@@ -94,7 +94,7 @@ withDefaults(
 </script>
 
 <style scoped>
-.iscod-header {
+.mvd-header {
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
@@ -102,7 +102,7 @@ withDefaults(
   min-height: 60px;
   border-radius: 0;
   background: #1d6da8;
-  color: var(--iscod-header-text);
+  color: var(--mvd-header-text);
   font-family:
     'PT Sans',
     system-ui,
@@ -111,7 +111,7 @@ withDefaults(
     sans-serif;
 }
 
-.iscod-header__inner {
+.mvd-header__inner {
   box-sizing: border-box;
   position: relative;
   z-index: 1;
@@ -121,11 +121,11 @@ withDefaults(
   padding-inline: 42px;
 }
 
-.iscod-header__brand {
+.mvd-header__brand {
   min-width: 0;
 }
 
-.iscod-header__system-logo {
+.mvd-header__system-logo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -135,32 +135,32 @@ withDefaults(
   line-height: 0;
 }
 
-.iscod-header__system-logo-main {
+.mvd-header__system-logo-main {
   display: block;
   width: 122px;
   height: 26px;
   object-fit: contain;
 }
 
-.iscod-header__actions {
+.mvd-header__actions {
   flex-shrink: 0;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.iscod-header__user {
+.mvd-header__user {
   min-height: 60px;
   padding: 10px 22px 10px 18px;
   border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.iscod-header__logo-slot {
+.mvd-header__logo-slot {
   position: relative;
   flex-shrink: 0;
   display: block;
   line-height: 0;
 }
 
-.iscod-header__watermark {
+.mvd-header__watermark {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -174,13 +174,13 @@ withDefaults(
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  opacity: var(--iscod-header-watermark-opacity, 0.055);
+  opacity: var(--mvd-header-watermark-opacity, 0.055);
   pointer-events: none;
   z-index: 0;
   filter: brightness(0) invert(1);
 }
 
-.iscod-header__logo {
+.mvd-header__logo {
   position: relative;
   z-index: 1;
   display: block;
@@ -189,11 +189,11 @@ withDefaults(
   object-fit: contain;
 }
 
-.iscod-header__titles {
+.mvd-header__titles {
   min-width: 0;
 }
 
-.iscod-header__org {
+.mvd-header__org {
   font-size: 14px;
   font-weight: 700;
   line-height: 16px;
@@ -205,7 +205,7 @@ withDefaults(
   max-width: 100%;
 }
 
-.iscod-header__service {
+.mvd-header__service {
   font-size: 11px;
   font-weight: 400;
   line-height: 12px;
@@ -218,7 +218,7 @@ withDefaults(
   max-width: 100%;
 }
 
-.iscod-header__user-name {
+.mvd-header__user-name {
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
@@ -227,7 +227,7 @@ withDefaults(
   white-space: nowrap;
 }
 
-.iscod-header :deep(.iscod-header__icon-btn.n-button) {
+.mvd-header :deep(.mvd-header__icon-btn.n-button) {
   width: 60px;
   min-height: 60px;
   border-radius: 0;
@@ -235,16 +235,16 @@ withDefaults(
   border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.iscod-header :deep(.iscod-header__icon-btn.n-button .n-button__icon) {
+.mvd-header :deep(.mvd-header__icon-btn.n-button .n-button__icon) {
   margin: 0;
 }
 
-.iscod-header :deep(.n-button .header-icon) {
+.mvd-header :deep(.n-button .header-icon) {
   color: #ffffff;
 }
 
 @media (max-width: 1024px) {
-  .iscod-header__inner {
+  .mvd-header__inner {
     padding-inline: 16px;
   }
 }

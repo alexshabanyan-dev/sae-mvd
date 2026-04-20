@@ -4,11 +4,11 @@ import { createPinia } from "pinia";
 
 import App from "./App.vue";
 import router from "./router";
-import { applyIscodCssVariables } from "./naive/apply-iscod-css-vars";
+import { applyMvdCssVariables } from "./naive/apply-mvd-css-vars";
 import "./styles/global.css";
 import "./naive/styles/index.css";
 
-applyIscodCssVariables();
+applyMvdCssVariables();
 
 const app = createApp(App)
 

@@ -7,29 +7,29 @@
  */
 .n-button.n-button--success-type:not(.n-button--ghost):not(.n-button--color) {
   background-color: transparent !important;
-  background-image: var(--iscod-button-success-gradient);
+  background-image: var(--mvd-button-success-gradient);
   color: #ffffff;
-  text-shadow: var(--iscod-button-success-text-shadow);
+  text-shadow: var(--mvd-button-success-text-shadow);
 }
 
 .n-button.n-button--success-type:not(.n-button--ghost):not(.n-button--color):hover {
   background-color: transparent !important;
-  background-image: var(--iscod-button-success-gradient-hover);
+  background-image: var(--mvd-button-success-gradient-hover);
 }
 
 .n-button.n-button--success-type:not(.n-button--ghost):not(.n-button--color):focus {
   background-color: transparent !important;
-  background-image: var(--iscod-button-success-gradient-hover);
+  background-image: var(--mvd-button-success-gradient-hover);
 }
 
 .n-button.n-button--success-type:not(.n-button--ghost):not(.n-button--color):active,
 .n-button.n-button--success-type:not(.n-button--ghost):not(.n-button--color).n-button--pressed {
   background-color: transparent !important;
-  background-image: var(--iscod-button-success-gradient-pressed);
+  background-image: var(--mvd-button-success-gradient-pressed);
 }
 
 .n-button.n-button--success-type:not(.n-button--ghost):not(.n-button--color).n-button--disabled {
   background-color: transparent !important;
-  background-image: var(--iscod-button-success-gradient);
-  text-shadow: var(--iscod-button-success-text-shadow);
+  background-image: var(--mvd-button-success-gradient);
+  text-shadow: var(--mvd-button-success-text-shadow);
 }
