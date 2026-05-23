@@ -2,7 +2,7 @@
   <section class="mvd-sub-header" aria-label="Подзаголовок страницы">
     <!-- Крошки → «Назад»: 16px; «Назад» → заголовок: 12px -->
     <n-flex vertical class="mvd-sub-header__inner" :wrap="false" :size="12">
-      <n-flex
+      <!-- <n-flex
         vertical
         class="mvd-sub-header__navigation"
         align="flex-start"
@@ -11,7 +11,7 @@
       >
         <SubHeaderBreadcrumbs />
         <SubHeaderBackButton v-if="showSubHeaderBack" />
-      </n-flex>
+      </n-flex> -->
 
       <n-flex vertical class="mvd-sub-header__title-wrap" :wrap="false" :size="12">
         <h1 class="mvd-sub-header__title">{{ resolvedTitle }}</h1>
@@ -23,15 +23,22 @@
 <script setup lang="ts">
 defineOptions({ name: 'MvdSubHeader' })
 import { computed } from 'vue'
+import { storeToRefs } from 'pinia'
 import { NFlex } from 'naive-ui'
 import { useRoute } from 'vue-router'
+
+import { useAppMetaStore } from '@/shared/store'
 
 import SubHeaderBackButton from './SubHeaderBackButton.vue'
 import SubHeaderBreadcrumbs from './SubHeaderBreadcrumbs.vue'
 
 const route = useRoute()
+const { activeScreen } = storeToRefs(useAppMetaStore())
 
-const resolvedTitle = computed(() => route.meta.pageTitle ?? '')
+/** Как в tesler: подпись текущего экрана из session (`ScreenSummary` / `SessionScreen.text`). */
+const resolvedTitle = computed(
+  () => activeScreen.value?.title?.trim() || (route.meta.pageTitle as string) || '',
+)
 
 const showSubHeaderBack = computed(
   () => route.meta.hideSubHeaderBack !== true && route.name !== 'home',

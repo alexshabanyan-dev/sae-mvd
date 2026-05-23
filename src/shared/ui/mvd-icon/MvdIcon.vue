@@ -14,6 +14,7 @@
 <script setup lang="ts">
 defineOptions({ name: 'MvdIcon' })
 import { computed } from 'vue'
+import { mvdIcons } from '@mvd/ui-kit-custom'
 
 const props = defineProps<{
   name: string
@@ -23,24 +24,10 @@ const props = defineProps<{
   height?: number | string
 }>()
 
-const iconModules = import.meta.glob('../../../assets/icons/*.svg', {
-  eager: true,
-  query: '?url',
-  import: 'default',
-}) as Record<string, string>
-
-const iconsByName = Object.fromEntries(
-  Object.entries(iconModules).map(([path, url]) => {
-    const filename = path.split('/').pop() ?? ''
-    const iconName = filename.replace(/\.svg$/i, '')
-    return [iconName, url]
-  }),
-) as Record<string, string>
-
 const iconSrc = computed(() => {
-  const resolved = iconsByName[props.name]
+  const resolved = mvdIcons[props.name as keyof typeof mvdIcons]
   if (!resolved) {
-    throw new Error(`[MvdIcon] Icon "${props.name}" not found in src/assets/icons`)
+    throw new Error(`[MvdIcon] Icon "${props.name}" not found in @mvd/ui-kit-custom registry`)
   }
   return resolved
 })

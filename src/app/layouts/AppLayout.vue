@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { NLayout, NLayoutContent, NLayoutFooter, NLayoutHeader } from 'naive-ui'
 
-import { MVD } from '@/naive/tokens'
+import { MVD } from '@mvd/ui-kit-custom'
 
 import Footer from './Footer.vue'
 import Header from './Header.vue'
@@ -49,7 +49,7 @@ const mainContentStyle = {
   flex-direction: column;
   padding: 0;
   background-color: v-bind(pageBackgroundColor);
-  box-shadow: 0 0 12px rgba(42, 60, 73, 0.24);
+  box-shadow: var(--mvd-page-header-shadow, 0 0 12px rgba(42, 60, 73, 0.24));
   z-index: 1;
 }
 

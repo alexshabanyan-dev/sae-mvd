@@ -3,7 +3,7 @@
     <n-breadcrumb v-if="breadcrumbItems.length" class="mvd-sub-header__breadcrumbs">
       <n-breadcrumb-item
         v-for="(item, index) in breadcrumbItems"
-        :key="index"
+        :key="item.key"
         :clickable="false"
       >
         <template #separator>
@@ -11,11 +11,11 @@
         </template>
         <router-link
           v-if="item.to && index < breadcrumbItems.length - 1"
-          v-slot="{ navigate, href }"
+          v-slot="{ href }"
           :to="item.to"
           custom
         >
-          <a class="mvd-sub-header__breadcrumb-link" :href="href" @click="navigate">
+          <a class="mvd-sub-header__breadcrumb-link" :href="href" @click.prevent="onCrumbClick(item)">
             {{ item.label }}
           </a>
         </router-link>
@@ -28,23 +28,87 @@
 <script setup lang="ts">
 defineOptions({ name: 'MvdSubHeaderBreadcrumbs' })
 import { computed } from 'vue'
+import { storeToRefs } from 'pinia'
 import { NBreadcrumb, NBreadcrumbItem } from 'naive-ui'
-import { useRoute, type RouteLocationRaw } from 'vue-router'
+import { useRoute, useRouter, type RouteLocationRaw } from 'vue-router'
+
+import { resolveShellStepLabel } from '@/shared/navigation/shellBreadcrumbLabels'
+import { useAppMetaStore, useShellNavigationStore } from '@/shared/store'
 
 import { MvdIcon } from '@/shared/ui/mvd-icon'
 
 const route = useRoute()
+const router = useRouter()
+const appMetaStore = useAppMetaStore()
+const shellStore = useShellNavigationStore()
+const { name: serviceName, screens } = storeToRefs(appMetaStore)
+const { trail } = storeToRefs(shellStore)
 
-type BreadcrumbItem = { label: string; to?: RouteLocationRaw }
+type BreadcrumbItem = { key: string; label: string; to?: RouteLocationRaw }
+
+/** Только явный `meta.breadcrumbs` переопределяет shell (редкие статические экраны). */
+const metaBreadcrumbOverride = computed<BreadcrumbItem[]>(() => {
+  const trailMeta = route.meta.breadcrumbs
+  if (!trailMeta?.length) return []
+  return trailMeta.map((s, i) => ({
+    key: `meta-${i}-${s.label}`,
+    label: s.label,
+    to: s.to,
+  }))
+})
+
+/** Shell: сервис + посещённые (screen|view); последний без ссылки. */
+const shellItems = computed<BreadcrumbItem[]>(() => {
+  const steps = trail.value
+  if (!steps.length) return []
+
+  const items: BreadcrumbItem[] = []
+  const svc = serviceName.value?.trim()
+  if (svc) {
+    items.push({
+      key: 'service',
+      label: svc,
+      to: { name: 'home' },
+    })
+  }
+
+  for (let i = 0; i < steps.length; i++) {
+    const step = steps[i]
+    const isLast = i === steps.length - 1
+    const label = resolveShellStepLabel(screens.value, step.screenName, step.viewName)
+    const key = `${step.screenName}|${step.viewName}`
+    if (isLast) {
+      items.push({ key, label })
+    } else {
+      items.push({
+        key,
+        label,
+        to: {
+          name: 'view',
+          params: { screenName: step.screenName, viewName: step.viewName },
+        },
+      })
+    }
+  }
+
+  return items
+})
 
 const breadcrumbItems = computed<BreadcrumbItem[]>(() => {
-  const trail = route.meta.breadcrumbs
-  if (trail?.length) {
-    return trail.map((s) => ({ label: s.label, to: s.to }))
-  }
+  const override = metaBreadcrumbOverride.value
+  if (override.length) return override
+
+  const shell = shellItems.value
+  if (shell.length) return shell
+
   const label = route.meta.breadcrumbLabel ?? route.meta.pageTitle
-  return label ? [{ label: String(label) }] : []
+  return label ? [{ key: 'fallback', label: String(label) }] : []
 })
+
+function onCrumbClick(item: BreadcrumbItem) {
+  if (!item.to) return
+  void router.push(item.to)
+}
 </script>
 
 <style scoped>

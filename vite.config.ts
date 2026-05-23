@@ -15,6 +15,23 @@ export default defineConfig({
       defaultImport: 'url',
     }),
   ],
+  optimizeDeps: {
+    // Use official Vite/Rolldown setting to avoid generating dependency sourcemaps
+    // in node_modules/.vite/deps, which trigger oxc/client-inject parsing errors.
+    rolldownOptions: {
+      output: {
+        sourcemap: false,
+      },
+    },
+  },
+  server: {
+    proxy: {
+      "/rpc": {
+        target: "http://localhost:8080",
+        changeOrigin: true,
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

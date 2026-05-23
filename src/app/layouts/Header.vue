@@ -44,7 +44,7 @@
           quaternary
           size="large"
           :bordered="false"
-          text-color="#ffffff"
+          text-color="var(--mvd-header-text)"
           aria-label="Информация"
         >
           <template #icon>
@@ -57,7 +57,7 @@
           quaternary
           size="large"
           :bordered="false"
-          text-color="#ffffff"
+          text-color="var(--mvd-header-text)"
           aria-label="Выход"
         >
           <template #icon>
@@ -101,7 +101,7 @@ withDefaults(
   width: 100%;
   min-height: 60px;
   border-radius: 0;
-  background: #1d6da8;
+  background: var(--mvd-header-solid-background, #1d6da8);
   color: var(--mvd-header-text);
   font-family:
     'PT Sans',
@@ -144,13 +144,13 @@ withDefaults(
 
 .mvd-header__actions {
   flex-shrink: 0;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid var(--mvd-header-divider, rgba(255, 255, 255, 0.3));
 }
 
 .mvd-header__user {
   min-height: 60px;
   padding: 10px 22px 10px 18px;
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid var(--mvd-header-divider, rgba(255, 255, 255, 0.3));
 }
 
 .mvd-header__logo-slot {
@@ -198,7 +198,7 @@ withDefaults(
   font-weight: 700;
   line-height: 16px;
   letter-spacing: 0.3px;
-  color: #ffffff;
+  color: var(--mvd-header-text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -211,7 +211,7 @@ withDefaults(
   line-height: 12px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
-  color: #eef3f8;
+  color: var(--mvd-header-subtext, #eef3f8);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -223,7 +223,7 @@ withDefaults(
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.3px;
-  color: #ffffff;
+  color: var(--mvd-header-text);
   white-space: nowrap;
 }
 
@@ -232,7 +232,7 @@ withDefaults(
   min-height: 60px;
   border-radius: 0;
   padding: 0;
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid var(--mvd-header-divider, rgba(255, 255, 255, 0.3));
 }
 
 .mvd-header :deep(.mvd-header__icon-btn.n-button .n-button__icon) {
@@ -240,7 +240,7 @@ withDefaults(
 }
 
 .mvd-header :deep(.n-button .header-icon) {
-  color: #ffffff;
+  color: var(--mvd-header-text);
 }
 
 @media (max-width: 1024px) {
