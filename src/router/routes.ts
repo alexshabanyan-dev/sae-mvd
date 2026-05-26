@@ -15,6 +15,15 @@ export const routes: RouteRecordRaw[] = [
     },
   },
   {
+    path: '/test',
+    name: 'test',
+    component: () => import('@/views/TestPage.vue'),
+    meta: {
+      pageTitle: 'Тест layout',
+      breadcrumbLabel: 'Тест layout',
+    },
+  },
+  {
     path: '/screen/:screenName/view/:viewName',
     name: 'view',
     component: () => import('@/views/ViewPage.vue'),
