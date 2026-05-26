@@ -1,9 +1,4 @@
-import type {
-  ScreenMetaJson,
-  ViewMetaJson,
-  WidgetFormField,
-  WidgetListField,
-} from "@tesler-ui-crm/schema";
+import type { Screen, View, WidgetField } from "@master-service/meta-model-ui";
 import type { JsonRpcSuccess } from "./rpc";
 import { rpcClient } from "./rpcClient";
 
@@ -54,7 +49,7 @@ export interface PlayerWidgetDescriptor {
   boSystemId: string;
   title: string;
   type: string;
-  fields: Array<WidgetListField | WidgetFormField>;
+  fields: WidgetField[];
   options?: Record<string, unknown>;
 }
 
@@ -66,11 +61,11 @@ export interface PlayerViewWidgetItem {
   widget: PlayerWidgetDescriptor;
 }
 
-export type PlayerPrimaryView = Omit<ViewMetaJson, "widgets"> & {
+export type PlayerPrimaryView = Omit<View, "widgets"> & {
   widgets: PlayerViewWidgetItem[];
 };
 
-export type PlayerPrimaryScreen = Omit<ScreenMetaJson, "primaryViews"> & {
+export type PlayerPrimaryScreen = Omit<Screen, "primaryViews"> & {
   roles?: unknown[];
   primaryViews: PlayerPrimaryView[];
 };

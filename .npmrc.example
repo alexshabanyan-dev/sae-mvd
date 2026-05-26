@@ -1,6 +1,3 @@
-# Copy to .npmrc and set _auth (base64 of user:password).
-@mvd:registry=http://2.26.86.191:8081/repository/npm-hosted/
-@tesler-ui-crm:registry=http://2.26.86.191:8081/repository/npm-hosted/
-@example:registry=http://2.26.86.191:8081/repository/npm-hosted/
+@master-service:registry=http://2.26.86.191:8081/repository/npm-hosted/
 //2.26.86.191:8081/repository/npm-hosted/:_auth=BASE64_USER_COLON_PASS
 //2.26.86.191:8081/repository/npm-hosted/:always-auth=true

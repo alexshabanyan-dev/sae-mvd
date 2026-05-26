@@ -14,7 +14,7 @@
 <script setup lang="ts">
 defineOptions({ name: 'MvdIcon' })
 import { computed } from 'vue'
-import { mvdIcons } from '@mvd/ui-kit-custom'
+import { mvdIcons } from '@master-service/ui-kit-custom'
 
 const props = defineProps<{
   name: string
@@ -27,7 +27,7 @@ const props = defineProps<{
 const iconSrc = computed(() => {
   const resolved = mvdIcons[props.name as keyof typeof mvdIcons]
   if (!resolved) {
-    throw new Error(`[MvdIcon] Icon "${props.name}" not found in @mvd/ui-kit-custom registry`)
+    throw new Error(`[MvdIcon] Icon "${props.name}" not found in @master-service/ui-kit-custom registry`)
   }
   return resolved
 })

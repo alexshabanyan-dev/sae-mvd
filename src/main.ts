@@ -1,9 +1,9 @@
 import naive from "naive-ui";
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-import { applyMvdCssVariables } from "@mvd/ui-kit-custom";
-import "@mvd/ui-kit-custom/global.css";
-import "@mvd/ui-kit-custom/styles.css";
+import { applyMvdCssVariables } from "@master-service/ui-kit-custom";
+import "@master-service/ui-kit-custom/global.css";
+import "@master-service/ui-kit-custom/styles.css";
 
 import App from "./App.vue";
 import router from "./router";

@@ -1,4 +1,4 @@
-import type { MasterServiceMeta } from "@example/ui-backend-model";
+import type { MasterServiceMeta } from "@master-service/meta-model-ui";
 
 import type { PlayerMenuResult, PlayerScreenSummary, PlayerViewSummary } from "./menu";
 
@@ -24,7 +24,7 @@ export function mapMasterServiceMetaToPlayerMenu(meta: MasterServiceMeta): Playe
         title: screen.title,
         defaultScreen: screen.name === defaultScreenName,
         primaryViewName: screen.primaryViewName,
-        navigation: meta.navigation ?? null,
+        navigation: meta.navigation,
         views,
       });
     }

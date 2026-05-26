@@ -1,8 +1,10 @@
-import type { ScreenMetaJson } from "@tesler-ui-crm/schema";
+import type { MasterServiceMeta } from "@master-service/meta-model-ui";
+
+type Navigation = MasterServiceMeta["navigation"];
 
 /** Пункты меню с `screenName` — межэкранная навигация (портальный хаб). */
 export function navigationMenuHasCrossScreenLinks(
-  navigation: ScreenMetaJson["navigation"] | null | undefined,
+  navigation: Navigation | null | undefined,
 ): boolean {
   const menu = navigation?.menu;
   if (!menu?.length) return false;
@@ -27,7 +29,7 @@ export function navigationMenuHasCrossScreenLinks(
 /** Дефолтный экран с межэкранным меню — «портал» (плитки по screens, без primaryMenu в meta). */
 export function screenIsPortalHub(screen: {
   defaultScreen: boolean;
-  navigation: ScreenMetaJson["navigation"];
+  navigation: Navigation;
 }): boolean {
   return Boolean(screen.defaultScreen && navigationMenuHasCrossScreenLinks(screen.navigation));
 }

@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { NLayout, NLayoutContent, NLayoutFooter, NLayoutHeader } from 'naive-ui'
 
-import { MVD } from '@mvd/ui-kit-custom'
+import { MVD } from '@master-service/ui-kit-custom'
 
 import Footer from './Footer.vue'
 import Header from './Header.vue'

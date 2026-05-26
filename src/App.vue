@@ -13,6 +13,6 @@
 <script setup lang="ts">
 import { dateRuRU, NConfigProvider } from 'naive-ui'
 import { RouterView } from 'vue-router'
-import { naiveAppLocaleRu, naiveThemeOverrides } from '@mvd/ui-kit-custom'
+import { naiveAppLocaleRu, naiveThemeOverrides } from '@master-service/ui-kit-custom'
 import AppLayout from '@/app/layouts/AppLayout.vue'
 </script>

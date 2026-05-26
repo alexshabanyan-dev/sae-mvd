@@ -1,4 +1,4 @@
-import type { MasterServiceMeta } from "@example/ui-backend-model";
+import type { MasterServiceMeta } from "@master-service/meta-model-ui";
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 import {
